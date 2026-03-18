@@ -4,24 +4,67 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+  --muted: #f5f5f7;
+  --muted-foreground: #86868b;
+  --border: #e5e5ea;
+  --ring: #007aff;
+  --primary: #007aff;
+  --primary-foreground: #ffffff;
+  --destructive: #ff3b30;
+  --accent: #f5f5f7;
+  --accent-foreground: #1a1a1a;
+  --category-cooking: #ff9500;
+  --category-drinks: #007aff;
+  --category-desserts: #ff2d55;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #1c1c1e;
+  --foreground: #f5f5f7;
+  --muted: #2c2c2e;
+  --muted-foreground: #98989d;
+  --border: #38383a;
+  --ring: #0a84ff;
+  --primary: #0a84ff;
+  --primary-foreground: #ffffff;
+  --destructive: #ff453a;
+  --accent: #2c2c2e;
+  --accent-foreground: #f5f5f7;
+  --category-cooking: #ff9f0a;
+  --category-drinks: #0a84ff;
+  --category-desserts: #ff375f;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Smooth transitions for dark mode */
+html.transitioning,
+html.transitioning *,
+html.transitioning *::before,
+html.transitioning *::after {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease !important;
 }
