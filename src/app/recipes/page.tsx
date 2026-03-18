@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Utensils } from "lucide-react";
 import { RecipeGrid } from "@/components/recipe/recipe-grid";
 import { CategoryFilter } from "@/components/search/category-filter";

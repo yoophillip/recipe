@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { ChefHat, Wine, Cake, Flame, ArrowRight } from "lucide-react";
 import { SearchBar } from "@/components/search/search-bar";
